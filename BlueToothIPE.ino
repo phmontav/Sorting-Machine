@@ -37,7 +37,7 @@ void setup()
   pinMode(sensorOut, INPUT);
   
   
-  // Setting frequency-scaling to 20%
+ 
   digitalWrite(S0,HIGH);
   digitalWrite(S1,LOW);
   
@@ -84,17 +84,16 @@ void loop()
 
 
   
-  // Setting red filtered photodiodes to be read
+  
   digitalWrite(S2,LOW);
   digitalWrite(S3,LOW);
-  // Reading the output frequency
+ 
   frequency = pulseIn(sensorOut, LOW);
-  //Remaping the value of the frequency to the RGB Model of 0 to 255
-  //frequency = map(frequency, 95,120,255,0);
+  
   r=frequency;
-  // Printing the value on the serial monitor
-  Serial.print("\nR= ");//printing name
-  Serial.print(frequency);//printing RED color frequency
+  
+  Serial.print("\nR= ");
+  Serial.print(frequency);
   Serial.print("  ");
   delay(100);
 
@@ -109,17 +108,16 @@ void loop()
 
 
   
-  // Setting Green filtered photodiodes to be read
+  
   digitalWrite(S2,HIGH);
   digitalWrite(S3,HIGH);
-  // Reading the output frequency
+  
   frequency = pulseIn(sensorOut, LOW);
-  //Remaping the value of the frequency to the RGB Model of 0 to 255
-  //frequency = map(frequency,108 ,130,255,0);
+
   g=frequency;
-  // Printing the value on the serial monitor
-  Serial.print("G= ");//printing name
-  Serial.print(frequency);//printing RED color frequency
+  
+  Serial.print("G= ");
+  Serial.print(frequency);
   Serial.print("  ");
   delay(100);
 
@@ -128,22 +126,21 @@ void loop()
 
 
   
-  // Setting Blue filtered photodiodes to be read
+  
   digitalWrite(S2,LOW);
   digitalWrite(S3,HIGH);
-  // Reading the output frequency
+  
   frequency = pulseIn(sensorOut, LOW);
-  //Remaping the value of the frequency to the RGB Model of 0 to 255
- //frequency = map(frequency, 30,40,255,0);
+ 
   b=frequency;
-  // Printing the value on the serial monitor
-  Serial.print("B= ");//printing name
-  Serial.print(frequency);//printing RED color frequency
+ 
+  Serial.print("B= ");
+  Serial.print(frequency);
   Serial.println("  ");
   delay(100);
 
 
-  //verificar cor verde
+ 
   if ((r<230) && (r>200) && (g<130) && (g>100))
   {
     Serial.println("verde");
@@ -195,19 +192,10 @@ void loop()
 
 servo1.write(0);
 delay(600);
+      }}
 
 
 
 
       
                     
-    
-//     else if(loop_cte == '0')       
-//     {
-//
-//      
-//          Serial.println("saiu do while");
-//          Serial.println("\n");
-//     }                            
-} 
-}
